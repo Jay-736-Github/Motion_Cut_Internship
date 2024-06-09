@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Page - Coding Realm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-box">
+            <h1>Motion Cut Private Limited</h1>
+        </div>
+    </header>
+
+    <div class="billing-toggle">
+        <input type="radio" id="monthly" name="billing" value="monthly" checked onchange="changeBillingPeriod()">
+        <label for="monthly">1 Month</label>
+        <input type="radio" id="quarterly" name="billing" value="quarterly" onchange="changeBillingPeriod()">
+        <label for="quarterly">3 Months (Save 10%)</label>
+        <input type="radio" id="halfYearly" name="billing" value="halfYearly" onchange="changeBillingPeriod()">
+        <label for="halfYearly">6 Months (Save 15%)</label>
+        <input type="radio" id="yearly" name="billing" value="yearly" onchange="changeBillingPeriod()">
+        <label for="yearly">Yearly (Save 20%)</label>
+    </div>
+
+    <div class="pricing-container">
+        <div class="pricing-card basic" onclick="selectPlan('basic')">
+            <h2>Basic</h2>
+            <p class="price" id="basic-price">$10<span>/month</span></p>
+            <p class="savings" id="basic-savings"></p>
+            <ul>
+                <li>10 GB Storage</li>
+                <li>10 Users</li>
+                <li>Email Support</li>
+            </ul>
+            <button>Select</button>
+        </div>
+        <div class="pricing-card pro" onclick="selectPlan('pro')">
+            <h2>Pro</h2>
+            <p class="price" id="pro-price">$20<span>/month</span></p>
+            <p class="savings" id="pro-savings"></p>
+            <ul>
+                <li>50 GB Storage</li>
+                <li>50 Users</li>
+                <li>Priority Email Support</li>
+            </ul>
+            <button>Select</button>
+        </div>
+        <div class="pricing-card enterprise" onclick="selectPlan('enterprise')">
+            <h2>Enterprise</h2>
+            <p class="price" id="enterprise-price">$50<span>/month</span></p>
+            <p class="savings" id="enterprise-savings"></p>
+            <ul>
+                <li>Unlimited Storage</li>
+                <li>Unlimited Users</li>
+                <li>Phone and Email Support</li>
+            </ul>
+            <button>Select</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="currency-toggle">
+            <label for="currency">Currency:</label>
+            <select id="currency" onchange="changeCurrency()">
+                <option value="USD">$ - USD</option>
+                <option value="EUR">€ - EUR</option>
+                <option value="GBP">£ - GBP</option>
+                <option value="INR">₹ - INR</option>
+            </select>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
