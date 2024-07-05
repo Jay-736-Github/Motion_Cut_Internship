@@ -1,0 +1,161 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url('im1.avif') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+#app {
+    width: 90%;
+    max-width: 600px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.9));
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: auto; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#app:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(250, 250, 250, 0.8)); 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header-container h1 {
+    font-family: 'Pacifico', cursive;
+    font-weight: bolder;
+    font-size: 2.5em;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+    background: linear-gradient(135deg, #2c056a, #6c4ad3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="date"],
+input[type="text"] {
+    width: calc(50% - 10px); 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 10px rgba(255, 126, 95, 0.2);
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background: linear-gradient(135deg, #453784, #060c4a);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    box-shadow: 0 0 10px rgba(33, 136, 56, 0.3);
+}
+
+.task-groups {
+    width: 100%;
+    overflow-y: auto; 
+    margin-top: 20px;
+    max-height: calc(100vh - 260px); 
+}
+
+.task-group {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(245, 245, 245, 0.8));
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-group:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.task-group h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.task-list li:hover {
+    background-color: #f1f1f1;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+@media (max-width: 600px) {
+    input[type="date"],
+    input[type="text"] {
+        width: 90%;
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+    }
+}
